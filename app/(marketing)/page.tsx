@@ -20,8 +20,8 @@ const MarketingPage = () => {
         <h1 className="text-2xl md:text-5xl text-center text-neutral-700 mb-6">
           Ready to elevate your project management game?
         </h1>
-        <div className="text-2xl md:text-5xl text-center bg-gradient-to-r from-fuchsia-600 to-pink-600 text-white px-4 p-2 rounded-md pb-4 w-fit">
-          SwiftBoard is here to make it happen.
+        <div className="text-xl md:text-4xl text-center bg-gradient-to-r from-fuchsia-600 to-pink-600 text-white px-4 p-2 rounded-md pb-4 w-fit">
+          SwiftBoard is here to make it happen
         </div>
       </div>
       <div
