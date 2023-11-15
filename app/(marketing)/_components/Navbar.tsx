@@ -1,7 +1,12 @@
+import Logo from "@/components/Logo";
 import React from "react";
 
 const Navbar = () => {
-  return <div>Navbar</div>;
+  return (
+    <div>
+      Navbar <Logo />{" "}
+    </div>
+  );
 };
 
 export default Navbar;

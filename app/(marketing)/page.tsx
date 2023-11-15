@@ -2,7 +2,12 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Medal } from "lucide-react";
 import Link from "next/link";
-import React from "react";
+import { Poppins } from "next/font/google";
+
+const textFont = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
 
 const MarketingPage = () => {
   return (
@@ -21,7 +26,8 @@ const MarketingPage = () => {
       </div>
       <div
         className={cn(
-          "text-sm md:text-xl text-neutral-400 mt-4 max-w-xs md:max-w-2xl text-center mx-auto"
+          "text-sm md:text-xl text-neutral-400 mt-4 max-w-xs md:max-w-2xl text-center mx-auto",
+          textFont.className
         )}
       >
         Streamline your workflow, enhance collaboration, and achieve
