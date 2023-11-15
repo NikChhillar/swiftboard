@@ -1,24 +1,85 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Project Name
+
+SwiftBoard - Agile Project Management Platform
+
+## Overview
+
+SwiftBoard is a feature-rich project management platform built on Next.js 14, React, Prisma, Stripe, Tailwind, and MySQL. It provides a comprehensive set of tools for seamless organization and collaboration, ensuring efficient management of tasks and projects. From user authentication to board creation and subscription management, SwiftBoard has you covered.
+
+## Key Features
+
+### Authentication
+
+- User authentication system for secure access.
+  
+### Organizations / Workspaces
+
+- Create and manage multiple organizations or workspaces for distinct project environments.
+
+### Board Management
+
+- Create boards effortlessly to initiate project workflows.
+- Randomly select beautiful cover images using the Unsplash API.
+
+### Activity Log
+
+- Track and monitor organizational activities with an activity log.
+
+### Board Operations
+
+- Rename or delete boards as needed.
+
+### List Management
+
+- Create, rename, delete, and reorder lists within boards.
+- Enable drag & drop functionality for list reordering.
+- Copy lists for quick replication.
+
+### Card Operations
+
+- Create cards for task management.
+- Add card descriptions for detailed information.
+- Rename, delete, and reorder cards within lists.
+- Enable drag & drop functionality for card reordering.
+- Copy cards for efficient replication.
+
+### Card Activity Log
+
+- Keep track of card-specific activities with a dedicated activity log.
+
+### Board Limit
+
+- Set board limits for each organization to maintain project scalability.
+
+### Subscription Management
+
+- Integrate Stripe for subscription-based payment processing.
+- Unlock unlimited boards with a subscription for each organization.
+
+### Landing Page
+
+- Present SwiftBoard's features and benefits on a visually appealing landing page.
+
+### Database
+
+- Utilize MySQL as the relational database for data storage.
+
+### Prisma ORM
+
+- Leverage Prisma as the ORM (Object-Relational Mapping) tool for seamless database interaction.
+
+### UI Framework
+
+- Use shadcnUI and TailwindCSS for a visually appealing and responsive user interface.
 
 ## Getting Started
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. Clone the repository.
+2. Install dependencies with `npm install`.
+3. Set up the MySQL database and update Prisma configuration.
+4. Configure Stripe integration for subscription management.
+5. Run the development server with `npm run dev`.
+6. Access the application in your browser at `http://localhost:3000`.
 
 ## Learn More
 
