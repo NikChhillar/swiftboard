@@ -1,12 +1,17 @@
-'use client'
+"use client";
 
-import { create } from '@/actions/create-board'
-import { Button } from '@/components/ui/button'
-import React from 'react'
+import { create } from "@/actions/create-board";
+import { Button } from "@/components/ui/button";
+import React from "react";
+import { useFormState } from "react-dom";
 
 const FormCreate = () => {
+  const initialState = { message: '', errors: {} };
+  const [state, dispatch] = useFormState(create, initialState);
+
   return (
-    <form action={create}>
+    <form action={dispatch}>
+      <div className="flex flex-col space-y-2">
         <input
           type="text"
           id="title"
@@ -15,9 +20,19 @@ const FormCreate = () => {
           placeholder="Name here"
           className="p-2 border border-black mx-2"
         />
-        <Button type="submit">Submit</Button>
-      </form>
-  )
-}
+        {state.errors?.title ? (
+          <div>
+            {state.errors?.title.map((error: string) => (
+              <p key={error} className="text-rose-500">
+                {error}
+              </p>
+            ))}
+          </div>
+        ) : null}
+      </div>
+      <Button type="submit">Submit</Button>
+    </form>
+  );
+};
 
-export default FormCreate
+export default FormCreate;
