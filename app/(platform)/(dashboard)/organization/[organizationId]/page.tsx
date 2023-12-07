@@ -1,16 +1,11 @@
+import Info from "./_components/Info";
 
-import { db } from "@/lib/db";
-import FormCreate from "./form";
 
 const OrganizationIdPage = async () => {
-  const boards = await db.board.findMany();
 
   return (
-    <div className="flex flex-col space-y-4">
-      <FormCreate />
-      {boards.map((board) => (
-        <div key={board.id}> Name: {board.title}</div>
-      ))}
+    <div className="w-full mb-20">
+      <Info />
     </div>
   );
 };
