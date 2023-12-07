@@ -1,4 +1,6 @@
-import { User2 } from "lucide-react";
+import Hint from "@/components/Hint";
+import { Skeleton } from "@/components/ui/skeleton";
+import { HelpCircle, User2 } from "lucide-react";
 import React from "react";
 
 const BoardList = () => {
@@ -15,6 +17,14 @@ const BoardList = () => {
         >
           <p className="text-sm">Create new board</p>
           <span className="text-xs">5 remaining</span>
+          <Hint
+            sideOffset={40}
+            description={`
+                Free Workspaces can have up to 5 open boards. For unlimited boards upgrade this workspace.
+              `}
+          >
+            <HelpCircle className="absolute bottom-2 right-2 h-[14px] w-[14px] " />
+          </Hint>
         </div>
       </div>
     </div>
@@ -22,3 +32,18 @@ const BoardList = () => {
 };
 
 export default BoardList;
+
+BoardList.Skeleton = function SkeletonBoardList() {
+  return (
+    <div className="grid gird-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+      <Skeleton className="aspect-video h-full w-full p-2" />
+      <Skeleton className="aspect-video h-full w-full p-2" />
+      <Skeleton className="aspect-video h-full w-full p-2" />
+      <Skeleton className="aspect-video h-full w-full p-2" />
+      <Skeleton className="aspect-video h-full w-full p-2" />
+      <Skeleton className="aspect-video h-full w-full p-2" />
+      <Skeleton className="aspect-video h-full w-full p-2" />
+      <Skeleton className="aspect-video h-full w-full p-2" />
+    </div>
+  );
+};
