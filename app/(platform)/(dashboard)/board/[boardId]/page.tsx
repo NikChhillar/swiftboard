@@ -5,3 +5,5 @@ const BoardIdPage = () => {
 };
 
 export default BoardIdPage;
+
+// 6.32
