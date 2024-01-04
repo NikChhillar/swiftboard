@@ -5,13 +5,16 @@ import ListForm from "./ListForm";
 import { useEffect, useState } from "react";
 import ListItem from "./ListItem";
 import { DragDropContext, Droppable } from "@hello-pangea/dnd";
+import { useAction } from "@/hooks/use-action";
+import { updateOrderList } from "@/actions/update-list-order";
+import { toast } from "sonner";
+import { updateCardOrder } from "@/actions/update-card-order";
 
 interface ListContainerProps {
   data: ListWithCards[];
   boardId: string;
 }
 
-// 8.40
 function reorder<T>(list: T[], startIndex: number, endIndex: number) {
   const result = Array.from(list);
   const [removed] = result.splice(startIndex, 1);
@@ -23,6 +26,24 @@ function reorder<T>(list: T[], startIndex: number, endIndex: number) {
 
 const ListContainer = ({ data, boardId }: ListContainerProps) => {
   const [orderedData, setOrderedData] = useState(data);
+
+  const { execute: executeListOrder } = useAction(updateOrderList, {
+    onSuccess: () => {
+      toast.success("List reordered...");
+    },
+    onError: (e) => {
+      toast.error(e);
+    },
+  });
+
+  const { execute: executeCardOrder } = useAction(updateCardOrder, {
+    onSuccess: () => {
+      toast.success("Card reordered...");
+    },
+    onError: (e) => {
+      toast.error(e);
+    },
+  });
 
   useEffect(() => {
     setOrderedData(data);
@@ -50,6 +71,9 @@ const ListContainer = ({ data, boardId }: ListContainerProps) => {
       );
 
       setOrderedData(items);
+
+      // server action
+      executeListOrder({ items, boardId });
     }
 
     //for a card
@@ -91,6 +115,9 @@ const ListContainer = ({ data, boardId }: ListContainerProps) => {
 
         setOrderedData(newOrderedData);
 
+        // server action
+        executeCardOrder({ boardId: boardId, items: reorderedCards });
+
         // in another list
       } else {
         // Remove card
@@ -111,6 +138,9 @@ const ListContainer = ({ data, boardId }: ListContainerProps) => {
         });
 
         setOrderedData(newOrderedData);
+
+        // server action
+        executeCardOrder({ boardId: boardId, items: destList.cards });
       }
     }
   };
