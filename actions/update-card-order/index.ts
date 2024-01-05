@@ -16,7 +16,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
     };
   }
 
-  const { items,  boardId } = data;
+  const { items, boardId } = data;
 
   let updatedCards;
 
