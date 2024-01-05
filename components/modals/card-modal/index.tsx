@@ -7,6 +7,7 @@ import { CardWithList } from "@/types";
 import { useQuery } from "@tanstack/react-query";
 import Header from "./header";
 import Description from "./description";
+import Action from "./action";
 
 export const CardModal = () => {
   //
@@ -34,6 +35,7 @@ export const CardModal = () => {
               )}
             </div>
           </div>
+          {!cardData ? <Action.Skeleton /> : <Action data={cardData} />}
         </div>
       </DialogContent>
     </Dialog>
