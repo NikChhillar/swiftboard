@@ -12,13 +12,15 @@ export const UpdateCard = z.object({
         message: "Description is too short...",
       })
   ),
-  title: z
-    .string({
-      required_error: "Title is required..",
-      invalid_type_error: "Title is req...",
-    })
-    .min(3, {
-      message: "Title length should be greater than 2 letters",
-    }),
+  title: z.optional(
+    z
+      .string({
+        required_error: "Title is required..",
+        invalid_type_error: "Title is req...",
+      })
+      .min(3, {
+        message: "Title length should be greater than 2 letters",
+      })
+  ),
   id: z.string(),
 });
