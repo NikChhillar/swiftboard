@@ -1,11 +1,5 @@
-import React from "react";
-
 const BillingPage = () => {
-  return (
-    <div>
-      Everything is free, a user can create upto 7 boards in an organization...
-    </div>
-  );
+  return <div>Will be implemented in the future</div>;
 };
 
 export default BillingPage;

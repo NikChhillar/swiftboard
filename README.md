@@ -4,7 +4,7 @@ SwiftBoard - Agile Project Management Platform
 
 ## Overview
 
-SwiftBoard is a feature-rich project management platform built on Next.js 14, React, Prisma, Stripe, Tailwind, and MySQL. It provides a comprehensive set of tools for seamless organization and collaboration, ensuring efficient management of tasks and projects. From user authentication to board creation and subscription management, SwiftBoard has you covered.
+SwiftBoard is a feature-rich project management platform built on Next.js 14, React, Prisma, Tailwind, and MongoDb. It provides a comprehensive set of tools for seamless organization and collaboration, ensuring efficient management of tasks and projects. From user authentication to board creation and activity logs, SwiftBoard has you covered.
 
 ## Key Features
 
@@ -51,18 +51,13 @@ SwiftBoard is a feature-rich project management platform built on Next.js 14, Re
 
 - Set board limits for each organization to maintain project scalability.
 
-### Subscription Management
-
-- Integrate Stripe for subscription-based payment processing.
-- Unlock unlimited boards with a subscription for each organization.
-
 ### Landing Page
 
 - Present SwiftBoard's features and benefits on a visually appealing landing page.
 
 ### Database
 
-- Utilize MySQL as the relational database for data storage.
+- Utilize MongoDb database for data storage.
 
 ### Prisma ORM
 
@@ -76,7 +71,7 @@ SwiftBoard is a feature-rich project management platform built on Next.js 14, Re
 
 1. Clone the repository.
 2. Install dependencies with `npm install`.
-3. Set up the MySQL database and update Prisma configuration.
+3. Set up the MongoDb database and update Prisma configuration.
 4. Configure Stripe integration for subscription management.
 5. Run the development server with `npm run dev`.
 6. Access the application in your browser at `http://localhost:3000`.
